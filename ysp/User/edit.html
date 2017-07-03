@@ -1,0 +1,63 @@
+<extend name="Public:public"/>
+<block name="admin">
+<div class="mws-panel grid_8">
+<div class="mws-panel-header">
+     <span>用户修改</span>
+</div>
+<div class="mws-panel-body no-padding">
+     <form action="__MODULE__/User/update" method="post" class="mws-form" enctype="multipart/form-data">
+         <foreach name="edit" item="stu">
+          <div class="mws-form-inline">
+               <div class="mws-form-row">
+                    <label class="mws-form-label">用户名:</label>
+                    <div class="mws-form-item">
+                         <input value="{$stu['username']}" type="text" class="small" name="username">
+                          <input type="hidden" value="{$stu['id']}" name="id">
+                    </div>
+               </div>
+               <div class="mws-form-row">
+                    <label class="mws-form-label">原始密码:</label>
+                    <div class="mws-form-item">
+                         <input type="password" name="repassword" class="small">
+                    </div>
+               </div>
+               <div class="mws-form-row">
+                    <label class="mws-form-label">新密码:</label>
+                    <div class="mws-form-item">
+                         <input type="password" name="password" class="small">
+                    </div>
+               </div>
+
+               <div class="mws-form-row">
+                    <label class="mws-form-label">修改头像:</label>
+                    <div class="mws-form-item">
+                         <input type="file" name="pic">
+                    </div>
+               </div>
+               <!--  <div class="mws-form-row">
+                    <label class="mws-form-label">权限</label><br>
+                    <div class="mws-form-item">
+                         <select value="{$stu['level']}" name="level" class="input w50">
+                      
+                        <option value="0">普通会员</option>
+                        <option value="1">vip会员</option>
+                        <option value="2">禁用</option>
+                        <option value="3">普通管理员</option>
+                        <option value="4">超级管理员</option>
+       
+            </select>
+                    </div>
+                   
+               </div> -->
+          </div>
+          <div class="mws-button-row">
+               <input type="submit" class="btn btn-danger" value="添加">
+               <input type="reset" class="btn " value="重置">
+          </div>
+     </form>
+</div>         
+</div>
+</block>
+<block name="title">
+        后台用户添加操作
+</block>

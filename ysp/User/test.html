@@ -1,0 +1,28 @@
+<table class="table table-bordered table-hover table-striped table-condensed text-center">
+
+      		<tr>
+      			<th style="text-align:center">id</th>
+               <th style="text-align:center">用户名</th>
+               <!-- <th style="text-align:center">权限</th> -->
+               <th style="text-align:center">邮箱</th>
+               
+               <th style="text-align:center">状态</th>
+              <!--  <th style="text-align:center">密保</th> -->
+      			<th style="text-align:center">操作</th>
+      		</tr>
+         <foreach name="data" item="row">
+  
+      		<tr>
+      			<td>{$row['id']}</td>
+      			<td>{$row['username']}</td>
+            <td>{$row['email']}</td>
+               
+               <td>{$row['status']}</td>
+      			<!-- <td>{$row['token']}</td> -->
+               <td><a href="__MODULE__/User/delete/id/{$row['id']}" class="btn btn-info">删除</a> <a href="__MODULE__/User/edit/id/{$row['id']}" class="btn btn-success">修改</a> <a href="__MODULE__/User/details/id/{$row['id']}" class="btn btn-info">查看详情</a> </td>
+      		</tr>
+         </foreach> 
+         
+             
+         
+      	</table>

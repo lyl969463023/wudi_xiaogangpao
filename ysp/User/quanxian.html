@@ -1,0 +1,82 @@
+<extend name="Public:public"/>
+<block name="admin">
+
+
+<div class="mws-panel grid_8">
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/bs/css/bootstrap.min.css">
+	 <div class="mws-panel-header"  style="padding-bottom: 32px;">
+            <span>用户权限修改</span>
+     </div>
+
+      <!-- <include file="Stu/menu"/> -->
+      <!-- date_default_timezone_set('UTC'); -->
+      <div class="mws-panel-body no-padding">
+
+      	<table class="table table-bordered table-hover table-striped table-condensed text-center">
+
+      		<tr>
+      			<th style="text-align:center">id</th>
+               <th style="text-align:center">用户名</th>
+               <th style="text-align:center">当前权限</th>
+              
+               <th style="text-align:center">修改权限</th>
+      			<th style="text-align:center">操作</th>
+      		</tr>
+
+         <foreach name="list" item="row">
+            
+      		<tr>
+            
+      			<td>{$row['id']}</td>
+      			<td>{$row['username']}</td>
+            <td>{$arr[$row['rid']]}</if></td>
+            <!-- <td><a href="__MODULE__/User/quanxiangl/id/{$row['id']}">设置</a></td> -->
+      			<td> 
+            <div class="mws-form-row">
+                    <!-- <label class="mws-form-label"></label><br> -->
+            <form action="__MODULE__/User/updateqx/id/{$row['id']}" method="post" class="mws-form" enctype="multipart/form-data">
+
+                    <div class="mws-form-item">
+                         <select value="" name="rid" class="input w50">
+                        <option value="0">无</option>
+                      
+                        <foreach name="data" item="row">
+                        <option value="{$row['id']}">{$row['name']}</option>
+                        
+                       
+                        </foreach>
+                          </select>
+              </div>
+                   
+               </div>
+               </td>
+      			<!-- <td>{$row['token']}</td> -->
+               <td><!-- <a href="__MODULE__/User/updateqx/id/{$row['id']}" class="btn btn-success">修改</a> -->
+               <div class="mws-button-row">
+               <input type="submit" value="修改" calss="class="btn btn-danger"">
+               </div>
+               </td>
+      		</tr>
+          </form>
+         </foreach> 
+         
+             
+         
+      	</table>
+        <!--  <div style="margin-right: 64px;" align="right">
+             {$pageinfo}
+         </div>
+         -->
+      </div>
+  
+</div>
+
+
+
+
+
+</block>
+
+<block name="title">
+后台查看用户
+</block>

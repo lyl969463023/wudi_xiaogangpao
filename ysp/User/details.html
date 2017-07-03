@@ -1,0 +1,50 @@
+<extend name="Public:public"/>
+<block name="admin">
+<div class="mws-panel grid_8">
+<div class="mws-panel-header">
+     <span>用户详情</span>
+</div>
+<div class="mws-panel-body no-padding">
+     <table style="text-align:center" border="1px" width="100%" height="300px">
+    
+     <foreach name="details" item="stu"></foreach>
+     <tr>
+     	<td>用户id</td>
+     	<td>{$stu['id']}</td>
+     	
+     	
+     	
+     	<td Colspan="3" Rowspan="3" style="width:50px;height:200px">
+
+              
+              <img src="__ROOT__/Public/Uploads/{$stu['pic']}" width="200px" height="200px" alt="">
+                <!-- echo "<img src='{$url}' width='200px' height='200px'>"; -->
+          </td>
+     	
+     </tr>
+     <tr>
+     <td>用户名</td>
+     	<td>{$stu['username']}</td>
+          
+     </tr>
+     <tr>
+     	<td>用户邮箱</td>
+     	<td>{$stu['email']}</td>
+          
+     </tr>
+     <tr>
+     	<td>用户添加时间</td>
+     	<td>{$stu['addtime']}</td>
+          <td></td>
+          <td></td>
+          <td></td>
+     </tr>
+     	
+     	</foreach>
+     </table>
+</div>         
+</div>
+</block>
+<block name="title">
+        后台用户添加操作
+</block>

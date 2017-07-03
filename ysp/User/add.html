@@ -1,0 +1,70 @@
+<extend name="Public:public"/>
+<block name="admin">
+<div class="mws-panel grid_8">
+<div class="mws-panel-header">
+<span>用户添加</span>
+</div>
+<div class="mws-panel-body no-padding">
+<form action="__MODULE__/User/insert" method="post" class="mws-form" enctype="multipart/form-data">
+   
+     <div class="mws-form-inline">
+          <div class="mws-form-row">
+               <label class="mws-form-label">用户名:</label>
+               <div class="mws-form-item">
+                    <input value="" type="text" class="small" name="username">
+               </div>
+          </div>
+          <div class="mws-form-row">
+               <label class="mws-form-label">密码:</label>
+               <div class="mws-form-item">
+                    <input type="password" name="password" class="small">
+               </div>
+          </div>
+          <div class="mws-form-row">
+               <label class="mws-form-label">确认密码:</label>
+               <div class="mws-form-item">
+                    <input type="password" name="repassword" class="small">
+                    <input type="hidden" name="rid" value="0">
+               </div>
+          </div>
+          
+         
+
+          <div class="mws-form-row">
+               <label class="mws-form-label">邮箱:</label>
+               <div class="mws-form-item">
+                    <input value="" type="text" name="email" class="small">
+               </div>
+          </div>
+
+          <div class="mws-form-row">
+               <label class="mws-form-label">头像:</label>
+               <div class="mws-form-item">
+                     
+                     <input style="width:50px" type="file" name="pic">
+                    
+                
+                 <!-- <img src="{$url}" width="200px" height="200px" alt=""> -->
+               </div>
+          </div>
+
+           <div class="mws-form-row">
+               <label class="mws-form-label">验证问题:你是sb吗？</label><br>
+               <div class="mws-form-item">
+                    <input value="" type="text" name="token" class="small">
+               </div>
+               <input type="hidden" name="addtime" value="">
+               <input type="hidden" name="status" value="1">
+          </div>
+     </div>
+     <div class="mws-button-row">
+          <input type="submit" class="btn btn-danger" value="添加">
+          <input type="reset" class="btn " value="重置">
+     </div>
+</form>
+</div>         
+</div>
+</block>
+<block name="title">
+   后台用户添加操作
+</block>
